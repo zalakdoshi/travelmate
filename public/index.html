@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelEase - Travel Management System</title>
+  <meta name="description"
+    content="Complete travel management system with customer booking, admin management, and driver assignment features. Book trips across Indian cities with real-time pricing.">
+
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="TravelEase - Travel Management System">
+  <meta property="og:description"
+    content="Complete travel management system with customer booking, admin management, and driver assignment features.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://travelease.example.com">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- React and ReactDOM from CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+ 
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Load the TravelApp component -->
+  <script type="text/babel" src="App.jsx"></script>
+
+  <!-- Initialize the app -->
+  <script type="text/babel">
+    const { createElement } = React;
+    const { createRoot } = ReactDOM;
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(createElement(TravelApp));
+  </script>
+</body>
+
+</html>

@@ -159,7 +159,7 @@ export default function LoginScreen() {
     }, 500);
   };
 
-  const selectedRole = roles.find(r => r.value === formData.role);
+
 
   return (
     <div style={{

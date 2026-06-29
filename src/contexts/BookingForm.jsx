@@ -53,6 +53,7 @@ function BookingForm() {
 
   useEffect(() => {
     calculatePrice();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData.from, formData.to, formData.vehicleOption]);
 
   const calculatePrice = () => {

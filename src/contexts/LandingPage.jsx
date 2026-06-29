@@ -29,26 +29,6 @@ const stats = [
   { value: "₹5/km", label: "Starting Price" },
 ];
 
-const roles = [
-  {
-    icon: "👤", role: "Customer",
-    color: "rgba(79,70,229,0.08)", borderColor: "rgba(79,70,229,0.2)", textColor: "#4F46E5",
-    desc: "Book trips, track rides, and manage your travel history from a clean, intuitive dashboard.",
-    perks: ["Route booking","Live status","Trip history"],
-  },
-  {
-    icon: "🛡️", role: "Admin", featured: true,
-    color: "rgba(5,150,105,0.08)", borderColor: "rgba(5,150,105,0.2)", textColor: "#059669",
-    desc: "Manage the entire fleet — assign drivers, monitor trips, and track revenue in real time.",
-    perks: ["Driver assignment","Analytics","Fleet overview"],
-  },
-  {
-    icon: "🚘", role: "Driver",
-    color: "rgba(217,119,6,0.08)", borderColor: "rgba(217,119,6,0.2)", textColor: "#D97706",
-    desc: "Accept trips, manage your schedule, and track your earnings with a dedicated driver view.",
-    perks: ["Trip management","Earnings tracker","Status toggle"],
-  },
-];
 
 function LandingPage({ onGetStarted }) {
   const [scrolled, setScrolled] = useState(false);
@@ -211,51 +191,6 @@ function LandingPage({ onGetStarted }) {
         </div>
       </section>
 
-      <div className="tm-section-divider" />
-
-      {/* ── Roles ── */}
-      <section style={{ padding:"5rem 1.5rem", background:"var(--bg-base)" }}>
-        <div style={{ maxWidth:"1280px", margin:"0 auto" }}>
-          <div style={{ marginBottom:"0.75rem" }}>
-            <span style={{ fontSize:"0.75rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--accent)" }}>Built for everyone</span>
-          </div>
-          <h2 style={{ fontSize:"clamp(1.75rem,3.5vw,2.5rem)",fontWeight:700,letterSpacing:"-0.03em",color:"var(--text-primary)",marginBottom:"3rem",maxWidth:"440px" }}>
-            Three roles,<br/>one platform.
-          </h2>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(270px,1fr))",gap:"1rem",alignItems:"start" }}>
-            {roles.map((r,i)=>(
-              <div key={i} style={{
-                background:"var(--bg-surface)", border:`1px solid ${r.featured?r.borderColor:"var(--border)"}`,
-                borderRadius:"var(--radius-xl)", padding:"1.75rem", position:"relative",
-                boxShadow: r.featured ? "var(--shadow-md)" : "var(--shadow-xs)",
-                transition:"transform 0.2s ease, box-shadow 0.2s ease",
-              }}
-              onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-4px)";e.currentTarget.style.boxShadow="var(--shadow-lg)";}}
-              onMouseLeave={e=>{e.currentTarget.style.transform="translateY(0)";e.currentTarget.style.boxShadow=r.featured?"var(--shadow-md)":"var(--shadow-xs)";}}>
-                {r.featured && (
-                  <div style={{ position:"absolute",top:"1.25rem",right:"1.25rem" }}>
-                    <span className="tm-badge" style={{ background:r.color,color:r.textColor,borderColor:r.borderColor }}>Most used</span>
-                  </div>
-                )}
-                <div style={{ width:"48px",height:"48px",borderRadius:"var(--radius-md)",background:r.color,border:`1px solid ${r.borderColor}`,
-                  display:"flex",alignItems:"center",justifyContent:"center",fontSize:"1.375rem",marginBottom:"1.25rem" }}>{r.icon}</div>
-                <h3 style={{ fontSize:"1.125rem",fontWeight:700,letterSpacing:"-0.02em",color:"var(--text-primary)",marginBottom:"0.625rem" }}>{r.role}</h3>
-                <p style={{ fontSize:"0.875rem",color:"var(--text-secondary)",lineHeight:1.65,marginBottom:"1.25rem" }}>{r.desc}</p>
-                <div style={{ display:"flex",flexDirection:"column",gap:"0.5rem" }}>
-                  {r.perks.map((p,j)=>(
-                    <div key={j} style={{ display:"flex",alignItems:"center",gap:"0.5rem",fontSize:"0.8125rem",color:"var(--text-secondary)" }}>
-                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24">
-                        <path d="M20 6L9 17l-5-5" stroke={r.textColor} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {p}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <div className="tm-section-divider" />
 
